@@ -5,8 +5,8 @@ const defaultFilterContext: FiltersContextInterface = {
   search: '',
   showingFilters: false,
   debouncedSearch: '',
-  setSearch: () => {},
-  toggleShowingFilters: () => {},
+  setSearch: () => { },
+  toggleShowingFilters: () => { },
 }
 
 export const FiltersContext = React.createContext<FiltersContextInterface>(

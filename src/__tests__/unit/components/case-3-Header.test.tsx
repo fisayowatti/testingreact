@@ -5,7 +5,27 @@ import Header from '../../../components/Header'
 import { FiltersContext } from '../../../context/filters'
 
 describe('The Header component', () => {
-  it('❌ renders header correctly', () => {})
+  const defaultContext = { toggleShowingFilters: jest.fn() }
+  const setUpHeader = (value = defaultContext) =>
+    render(
+      <FiltersContext.Provider value={...value as any}>
+        <Header />
+      </FiltersContext.Provider>,
+    )
 
-  it('❌ toggles the filter open when the Filter button is clicked', () => {})
+  it('renders header correctly', () => {
+    const { asFragment } = setUpHeader()
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('toggles the filter open when the Filter button is clicked', () => {
+    const { getByTestId } = setUpHeader()
+
+    const filterButton = getByTestId('FilterButton')
+
+    fireEvent.click(filterButton)
+
+    expect(defaultContext.toggleShowingFilters).toHaveBeenCalled()
+  })
 })
