@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import ProductTile from '../../../components/ProductTile'
+import { MemoryRouter } from 'react-router-dom'
 
 describe('The <ProductTile /> component', () => {
   const defaultProduct = {
@@ -15,7 +16,9 @@ describe('The <ProductTile /> component', () => {
 
   it('renders a product tile with name, image and price', () => {
     const { getByText, getByAltText } = render(
-      <ProductTile {...(defaultProduct as any)} />,
+      <MemoryRouter>
+        <ProductTile {...(defaultProduct as any)} />
+      </MemoryRouter>,
     )
 
     expect(getByText(defaultProduct.name)).toBeInTheDocument()
@@ -25,12 +28,14 @@ describe('The <ProductTile /> component', () => {
 
   it('renders a product tile with name and price only', () => {
     const { queryByTestId } = render(
-      <ProductTile
-        {...({
-          ...defaultProduct,
-          image: undefined,
-        } as any)}
-      />,
+      <MemoryRouter>
+        <ProductTile
+          {...({
+            ...defaultProduct,
+            image: undefined,
+          } as any)}
+        />
+      </MemoryRouter>,
     )
 
     expect(queryByTestId('ProductTileImage')).toBeNull()

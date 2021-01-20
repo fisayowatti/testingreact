@@ -1,6 +1,13 @@
 import { build, fake } from '@jackfranklin/test-data-bot'
 
-export const productBuilder = build('Product', {
+interface ProductBuilder {
+  id: number;
+  image: string;
+  name: string;
+  price: string;
+}
+
+export const productBuilder = build<ProductBuilder>('Product', {
   fields: {
     id: fake((f) => f.random.number()),
     image: fake((f) => f.image.imageUrl()),

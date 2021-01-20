@@ -3,24 +3,32 @@
 exports[`The Header component renders header correctly 1`] = `
 <DocumentFragment>
   <header
-    class="sc-AxhCb ccgeXB"
+    class="sc-eCssSg hVnNYd"
   >
     <span
-      class="sc-AxiKw iyFHjw"
+      class="sc-hKgILt hiVVBj"
     />
     <div
-      class="sc-AxjAm dGBLMY"
+      class="sc-bdfBwQ efJNDJ"
     >
       TESTING 
       <span />
       REACT.DEV
     </div>
-    <button
-      class="sc-AxirZ xKohc"
-      data-testid="FilterButton"
-    >
-      Filter
-    </button>
+    <div>
+      <button
+        class="sc-gsTCUz feUypG"
+        data-testid="FilterButton"
+      >
+        Filter
+      </button>
+      <button
+        class="sc-gsTCUz sc-dlfnbm feUypG ggRcYP"
+        data-testid="CartButton"
+      >
+        Cart (0)
+      </button>
+    </div>
   </header>
 </DocumentFragment>
 `;

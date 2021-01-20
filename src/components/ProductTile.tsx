@@ -9,7 +9,7 @@ const ProductTile: FC<Product> = ({ id, name, price, image }) => {
     <Wrapper data-testid="ProductTile">
       <ImageWrapper>
         {image && (
-          <Link to={`/products/${id}`}>
+          <Link to={`/products/${id}`} data-testid="ProductTileLink">
             <Image
               alt={name}
               src={`${BASE_URL}${image}`}
